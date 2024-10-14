@@ -3,7 +3,7 @@ package Ticketautomat;
 public class Scanner {
     private Ticket ticket;
 
-    public void insertTicket(Ticket insertedTicket){
+    public void InsertTicket(Ticket insertedTicket){
         ticket = insertedTicket;
     }
 

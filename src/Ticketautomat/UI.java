@@ -1,9 +1,16 @@
 package Ticketautomat;
 
 public class UI {
-    Controller controller = new Controller();
-    Scanner scanner = new Scanner();
-    Geldausgabe geldausgabe = new Geldausgabe();
+    Controller controller;
+    Scanner scanner;
+    Geldausgabe geldausgabe;
+
+    public UI (Controller controller, Scanner scanner, Geldausgabe geldausgabe)
+    {
+        this.controller = controller;
+        this.scanner = scanner;
+        this.geldausgabe = geldausgabe;
+    }
 
     public void ButtonPressed()
     {
@@ -13,12 +20,13 @@ public class UI {
 
     public void InsertMoney(double betrag)
     {
-       if(betrag >= scanner.getPrice()){
+        System.out.println(betrag + "€ eingeschmissen");
+        if(betrag >= scanner.getPrice()){
             scanner.getTicket().setPayedTimeStamp(System.currentTimeMillis());
             geldausgabe.returnChange(scanner.getPrice()-betrag);
-       } 
-       else{
+        } 
+        else{
             System.out.println("Zu zahlen: " + (scanner.getPrice() - betrag));
-       }
+        }
     }
 }
