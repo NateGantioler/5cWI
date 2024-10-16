@@ -23,6 +23,10 @@ public class Ticket {
         return createdTimeStamp;
     }
 
+    public void setCreatedTimeStamp(long createdTimeStamp) {
+        this.createdTimeStamp = createdTimeStamp;
+    }
+
     public long getPayedTimeStamp() {
         return payedTimeStamp;
     }

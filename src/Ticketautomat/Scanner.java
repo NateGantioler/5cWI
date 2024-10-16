@@ -10,7 +10,7 @@ public class Scanner {
     public double getPrice(){
         if(ticket != null)
         {
-            float price = (System.currentTimeMillis() - ticket.getCreatedTimeStamp()) / 1000 * 60;
+            float price = (System.currentTimeMillis() - ticket.getCreatedTimeStamp()) / (1000 * 60);
             return price;
         }
         System.out.println("Warnung: Kein Ticket im Scanner!");
