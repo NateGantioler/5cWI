@@ -1,4 +1,4 @@
-package Ticketautomat;
+package at.gan.Ticketautomat;
 
 public class UI {
     Controller controller;

@@ -1,4 +1,4 @@
-package Ticketautomat;
+package at.gan.Ticketautomat;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,8 +8,7 @@ public class Main {
         Geldausgabe geldausgabe = new Geldausgabe();
         UI ui = new UI(controller, scanner, geldausgabe);
         
-
-
+        
         ui.ButtonPressed();
         Ticket testTicket = controller.getTickets().get(0); 
         testTicket.setCreatedTimeStamp(testTicket.getCreatedTimeStamp() - 150000);
@@ -17,7 +16,5 @@ public class Main {
         System.out.println(scanner.getPrice() + "Euro");
         ui.InsertMoney(0.50);
         ui.InsertMoney(2.00);
-
-        //scanner.InsertTicket(controller.getTickets().get(0));
     }
 }
