@@ -5,7 +5,7 @@ public class Picture {
     private String name;
     private long creationDate;
 
-    private Picture(int size, String name)
+    public Picture(int size, String name)
     {
         this.size = size;
         this.name = name;
@@ -14,5 +14,9 @@ public class Picture {
 
     public int getSize() {
         return size;
+    }
+
+    public String getName() {
+        return name;
     }
 }
