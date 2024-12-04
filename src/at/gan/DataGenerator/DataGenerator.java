@@ -6,7 +6,7 @@ public class DataGenerator
 {
     public static int[] generateDataArray(int size) {
         Random random = new Random(); 
-        int[] data = new int[size];  
+        int[] data = new int[size+1];  
         for (int i = 0; i < size; i++)
         {  
             data[i] = random.nextInt();  
@@ -25,6 +25,8 @@ public class DataGenerator
     }
 
     public static void printArray(int[] data) {
+        
+        /* 
         for (int i = 0; i < data.length - 1; i++) {
             for (int j = 0; j < data.length - i - 1; j++) {
                 if (data[j] > data[j + 1]) {
@@ -34,10 +36,10 @@ public class DataGenerator
                 }
             }
         }
-
-        for (int a = 0; a < data.length-1; a++)
+        */
+        for (int a = 0; a < data.length; a++)
         {
-            System.out.println(data[a]);
+            System.out.print(data[a] + "  ");
         }
     }
 
