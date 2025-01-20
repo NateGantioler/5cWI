@@ -13,7 +13,7 @@ public class BubbleSort implements Sorter{
                 }
             }
         }
-    
+        
         return data;
     }    
 }
