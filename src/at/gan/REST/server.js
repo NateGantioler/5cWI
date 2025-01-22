@@ -23,11 +23,28 @@ let persons = [
 app.get('/persons', (req, res) => res.json(persons));
 
 app.post('/persons', (req, res) => {
-    const person = req.body;
-    person.id = persons.length + 1;
-    persons.push(person);
+  const person = req.body;
+  person.id = persons.length + 1;
+  persons.push(person);
+  res.json(person);
+});
+
+app.put('/persons/:id', (req, res) => {
+  const id = +req.params.id;
+  const person = persons.find(p => p.id === id);
+  if (person) {
+    Object.assign(person, req.body);
     res.json(person);
-  });
+  } else {
+    res.status(404).send('Nost found');
+  }
+});
+
+app.delete('/persons/:id', (req, res) => {
+  const id = +req.params.id;
+  persons = persons.filter(p => p.id !== id);
+  res.send('Deleted');
+});
 
 
 app.listen(port, () => console.log(`Server läuft auf http://localhost:${port}`));
